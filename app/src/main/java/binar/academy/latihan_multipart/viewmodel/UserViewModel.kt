@@ -1,5 +1,7 @@
 package binar.academy.latihan_multipart.viewmodel
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import binar.academy.latihan_multipart.data.model.UserResponse
@@ -27,6 +29,7 @@ class UserViewModel : ViewModel() {
                        liveDataUser.postValue(response.body())
                     }else{
                         liveDataUser.postValue(null)
+                        Log.d("msg", response.message())
                     }
                 }
 
